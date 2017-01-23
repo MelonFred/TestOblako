@@ -1,0 +1,13 @@
+<h1>Задачи</h1>
+<%= link_to image_tag("addTodoIcon.png", :border => 0), "#", id: "add_todo" %>
+<% @project.each { |value| %>
+<h2><%= value.title %></h2>
+<ul>
+    <% value.todos.each { |value| %>
+    <li><%= value.text %></li>
+    <% } %>
+</ul>
+<% } %>
+
+<%= render 'create' %>
+

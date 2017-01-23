@@ -1,0 +1,17 @@
+<div id="form_block" style="display: none">
+<h2>Новая задача</h2>
+<%= form_for :todo, html: {id: "form_id"} do |f| %>
+  <p>
+    <%= f.text_field :text, placeholder: 'Название задачи...' %>
+  </p>
+ 
+  <p>
+    <%= f.select(:project_id, options_from_collection_for_select(@project, :id, :title)) %>
+  </p>
+ 
+  <p>
+    <%= link_to "ОТМЕНА", "#", id: "close_form" %>
+    <%= link_to "OK", "#", id: "save_todo" %> 
+  </p>
+<% end %>
+</div>

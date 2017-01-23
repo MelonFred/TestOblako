@@ -13,3 +13,18 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(document).ready(function() {
+  $("#add_todo").click(function(event) {
+    $("#form_block").show();   
+  });
+
+  $("#close_form").click(function(event) {
+    $("#form_block").hide();
+  });
+});
+
+$(document).on("click", "#save_todo", function(){
+   event.preventDefault();
+   $("#form_id").submit();
+});
