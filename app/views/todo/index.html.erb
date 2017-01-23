@@ -3,8 +3,8 @@
 <% @project.each { |value| %>
 <h2><%= value.title %></h2>
 <ul>
-    <% value.todos.each { |value| %>
-    <li><%= value.text %></li>
+    <% value.todos.each { |value2| %>
+    <li><%= value2.text %></li>
     <% } %>
 </ul>
 <% } %>
