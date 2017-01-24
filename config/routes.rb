@@ -4,11 +4,9 @@ Rails.application.routes.draw do
 
   get 'todo/index'
 
-  get 'todo/update'
+  put 'todo/update'
 
-  get 'todo/create'
-
-  
+  post 'todo/create'
 
   root to: "todo#index"
 

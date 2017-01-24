@@ -1,7 +1,7 @@
 class TodoController < ApplicationController
 
   def index
-    @project = Project.all
+    @project = Project.includes(:todos)
   end
 
   def update
