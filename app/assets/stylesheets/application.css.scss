@@ -34,3 +34,136 @@
   font-weight: normal;
   font-style: normal;
 }
+
+body {
+  background-color: #f8f8f8;
+  margin: 0;
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.head {
+  background-color: #38afd9;
+  color: #fff;
+  width: 100%;
+  font-family: "OpenSans-Light";
+  text-align: center;
+  height: 90px;
+  display: -webkit-flex;
+  display:         flex;
+  -webkit-align-items: center;
+          align-items: center;
+}
+
+.head h1 {
+  margin: auto;
+}
+
+#add_todo {
+  margin-right: 40px;
+}
+
+.todo {
+  background-color: #fff;
+  font-family: "OpenSans-Regular";
+  -webkit-box-shadow: 0px 6px 12px 1px rgba(66,66,66,0.3);
+  -moz-box-shadow: 0px 6px 12px 1px rgba(66,66,66,0.3);
+  box-shadow: 0px 6px 12px 1px rgba(66,66,66,0.3);
+  padding: 10px 0;
+  margin: 1em;
+}
+
+.todo h2 {
+  font-family: "OpenSans-Semibold";
+  text-transform: uppercase;
+  font-size: 15px;
+  margin-left: 20px;
+}
+
+.todo ul {
+  padding: 20px;
+  margin: 0;
+}
+
+.todo li {
+  list-style-type: none;
+  padding-bottom: 20px;
+}
+
+.text {
+  display: inline;
+  margin-left: 20px;
+}
+
+.no_mask {
+  display: none;
+}
+
+.mask {
+  background-color:rgba(0,0,0,.7);
+  height:100%;
+  position:fixed;
+  width:100%;
+  top:0;
+  left:0;
+}
+
+#form_block {
+  background-color: #fff;
+  font-family: "OpenSans-Regular";
+  text-align: center;
+  width: 400px;
+  height: 230px;
+  position: absolute;
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 9;
+}
+
+#form_block h2 {
+  font-size: 12px;  
+  text-transform: uppercase;
+}
+
+#form_block a {
+  display: inline-block;
+  width: 170px;
+  margin: 5px;
+  padding: 10px 0;
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+}
+
+#todo_text {
+  width: 380px;
+  height: 40px;
+  padding: 15px;
+  font-family: "OpenSans-Light";
+}
+
+#close_form {
+  background-color: #9f9f9f;
+}
+
+#save_todo {
+  background-color: #3aafda;
+}
+
+.select2-selection, .select2-selection__rendered, .select2-selection__arrow {
+  width: 380px !important;
+  height: 40px !important;
+   span {
+    line-height: 40px !important;
+    text-align: left;
+   }
+}
+
+.select2-selection {
+  border-radius: 0 !important;
+}

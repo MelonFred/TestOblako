@@ -15,16 +15,41 @@
 //= require_tree .
 
 $(document).ready(function() {
+  
+  $('input').iCheck({
+    checkboxClass: 'icheckbox_square-blue'
+  });
+
+  $('select').select2({
+    minimumResultsForSearch: -1
+  });
+
   $("#add_todo").click(function(event) {
-    $("#form_block").show();   
+    event.preventDefault();
+    $("#mask").removeClass('no_mask');
+    $("#mask").addClass('mask');   
   });
 
-  $("#close_form").click(function(event) {
-    $("#form_block").hide();
-  });
-});
-
-$(document).on("click", "#save_todo", function(){
+  $("#save_todo").on("click", function(){
    event.preventDefault();
    $("#form_id").submit();
 });
+
+  $("#close_form").click(function(event) {
+    event.preventDefault();
+    $("#mask").removeClass('mask');
+    $("#mask").addClass('no_mask');
+  });
+
+  $('input').on('ifClicked', function(event){
+    event.preventDefault();
+    this.form.submit();
+  });
+});
+
+
+
+
+
+
+

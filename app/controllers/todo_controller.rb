@@ -5,6 +5,13 @@ class TodoController < ApplicationController
   end
 
   def update
+    @todo_upd = Todo.find(params_upd)
+    if @todo_upd.isCompleted == "f"
+      @todo_upd.isCompleted = true
+    else
+      @todo_upd.isCompleted = false
+    end
+    @todo_upd.save
   end
 
   def create
@@ -17,5 +24,9 @@ class TodoController < ApplicationController
   private
   def params_add
     params.require(:todo).permit(:text, :project_id)
+  end
+
+  def params_upd
+    params[:id]
   end
 end

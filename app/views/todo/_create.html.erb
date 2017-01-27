@@ -1,5 +1,5 @@
-<div id="form_block" style="display: none ">
-<h2>Новая задача</h2>
+<div id="form_block" >
+<h2>Новая задача</h2><hr>
 <%= form_for :todo, html: {id: "form_id"} do |f| %>
   <p>
     <%= f.text_field :text, placeholder: 'Название задачи...' %>

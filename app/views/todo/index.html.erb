@@ -1,13 +1,32 @@
+<div class="content">
+<div class="head">
 <h1>Задачи</h1>
 <%= link_to image_tag("addTodoIcon.png", :border => 0), "#", id: "add_todo" %>
+</div>
+<div class="container-fluid">
+<div class="row">
 <% @project.each { |value| %>
-<h2><%= value.title %></h2>
+<div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+<div class="todo">
+<h2><%= value.title %></h2><hr>
 <ul>
-    <% value.todos.each { |value| %>
-    <li><%= value.text %></li>
+    <% value.todos.order(:id).each { |value| %>
+    <li>
+        <%= form_tag url_for(action: "update", id: value.id), method: "put", id: "form_upd" do %>
+                <label>
+                <%= check_box_tag "check_upd" %>
+                <p class="text"><%= value.text %></p>
+                </label>          
+        <% end %>
+    </li>
     <% } %>
 </ul>
+</div>
+</div>
 <% } %>
-
-<%= render 'create' %>
-
+</div>
+</div>
+<div id="mask" class="no_mask">
+    <%= render 'create' %>
+</div>
+</div>
