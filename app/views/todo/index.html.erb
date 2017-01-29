@@ -14,7 +14,7 @@
     <li>
         <%= form_tag url_for(action: "update", id: value.id), method: "put", id: "form_upd" do %>
                 <label>
-                <%= check_box_tag "check_upd" %>
+                <%= check_box_tag "check_upd", value.id, value.isCompleted == "t" %>
                 <p class="text"><%= value.text %></p>
                 </label>          
         <% end %>
