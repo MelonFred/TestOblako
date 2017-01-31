@@ -1,8 +1,14 @@
 class TodoController < ApplicationController
 
   def index
+    @data = Project.all
+    respond_to do |format|
+      format.json { render :json => @data}
+    end
     @project = Project.includes(:todos)
   end
+
+  
 
   def update
     @todo_upd = Todo.find(params_upd)
