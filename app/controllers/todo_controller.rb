@@ -1,11 +1,11 @@
 class TodoController < ApplicationController
 
   def index
-    @data = Project.all
-    respond_to do |format|
-      format.json { render :json => @data}
-    end
     @project = Project.includes(:todos)
+    respond_to do |format|
+      format.html {}
+      format.json { render :json => @project}
+    end
   end
 
   
