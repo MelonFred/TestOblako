@@ -11,6 +11,7 @@ class TodoController < ApplicationController
   
 
   def update
+    skip_before_action :verify_authenticity_token
     @todo_upd = Todo.find(params_upd)
     if @todo_upd.isCompleted == "f"
       @todo_upd.isCompleted = true
