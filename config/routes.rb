@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   resources :todo
 
-  skip_before_action :verify_authenticity_token, :only => [:update, :put]
+  skip_before_action :verify_authenticity_token
 
   get 'todo/index'
 
