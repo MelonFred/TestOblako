@@ -1,5 +1,7 @@
 class TodoController < ApplicationController
 
+  skip_before_action :verify_authenticity_token, only: [:update]
+
   def index
     @project = Project.includes(:todos)
     respond_to do |format|
@@ -11,7 +13,6 @@ class TodoController < ApplicationController
   
 
   def update
-    skip_before_action :verify_authenticity_token
     @todo_upd = Todo.find(params_upd)
     if @todo_upd.isCompleted == "f"
       @todo_upd.isCompleted = true
