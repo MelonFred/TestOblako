@@ -31,7 +31,7 @@ class TodoController < ApplicationController
 
   private
   def params_add
-    params.require(:todo).permit(:text, :project_id)
+    params[:text, :project_id]
   end
 
   def params_upd
