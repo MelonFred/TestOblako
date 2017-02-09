@@ -1,6 +1,6 @@
 class TodoController < ApplicationController
 
-  skip_before_action :verify_authenticity_token, only: [:update]
+  skip_before_action :verify_authenticity_token, only: [:update, :create]
 
   def index
     @project = Project.includes(:todos)
